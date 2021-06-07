@@ -1,5 +1,5 @@
 ﻿
-namespace E10
+namespace E11
 {
     partial class Form1
     {
@@ -37,23 +37,24 @@ namespace E10
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(191, 34);
+            this.label1.Location = new System.Drawing.Point(298, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 13);
+            this.label1.Size = new System.Drawing.Size(183, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "SUMA DE LOS PRIMEROS 10 NUMEROS";
+            this.label1.Text = "NUMEROS PARES MENORES A 25";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(194, 136);
+            this.listBox1.Location = new System.Drawing.Point(301, 126);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(210, 238);
+            this.listBox1.Size = new System.Drawing.Size(180, 264);
             this.listBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(259, 82);
+            this.button1.Location = new System.Drawing.Point(352, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -65,7 +66,7 @@ namespace E10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);

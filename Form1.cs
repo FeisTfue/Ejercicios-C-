@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace E10
+namespace E11
 {
     public partial class Form1 : Form
     {
@@ -22,18 +22,22 @@ namespace E10
 
         private void button1_Click(object sender, EventArgs e)
         {
-            t = new Thread(suma);
+            t = new Thread(numerospares);
             t.Start();
         }
 
-        public void suma()
+        public void numerospares()
         {
-            int s = 0;
-            for (int i = 1; i <= 10; i++)
+            for (int i = 2; i <= 25; i=i+2)
             {
-                s = s + i;
-                this.listBox1.Items.Add(s);
+                this.listBox1.Items.Add(i);
+                Thread.Sleep(100);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
