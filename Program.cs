@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace E5
+namespace E6
 {
     class Program
     {
@@ -13,32 +13,39 @@ namespace E5
         {
             Proceso oProceso = new Proceso();
 
-            Console.WriteLine("Sumando los numeros del 1 al 10");
+            Console.WriteLine("Contando los numeros primos menores a 20: ");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine();
 
-            Thread Suma = new Thread(oProceso.SumaNumeros);
-            Suma.IsBackground = true;
-            Suma.Start();
-            Suma.Join();
+            Thread HiloPrimo = new Thread(oProceso.ContarPrimos);
+            HiloPrimo.IsBackground = true;
+            HiloPrimo.Start();
+            HiloPrimo.Join();
 
             Console.ReadLine();
         }
     }
     class Proceso
     {
-        public void SumaNumeros()
+        public void ContarPrimos()
         {
-            int sumaw = 0;
-            for (int numero = 1; numero <= 10; numero++)
+            int c = 0;
+            for (int numero = 1; numero <= 20; numero++)
             {
-                Console.Write(numero + " + ");
-                sumaw = sumaw + numero;
-                for (int GranContador = 0; GranContador <= 20000000; GranContador++);
+                for (int i = 1; i <= 20; i++)
+                {
+                    if (numero % i == 0)
+                    {
+                        c = c + 1;
+                    }
+                }
+                if (c==2)
+                {
+                    Console.Write(numero);
+                    Console.WriteLine();
+                }
+                c = 0;
             }
-            
-            Console.WriteLine();
-            Console.WriteLine("La suma es: "+sumaw);
 
             Console.WriteLine();
         }
