@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace E11
+namespace E12
 {
     public partial class Form1 : Form
     {
@@ -22,22 +22,17 @@ namespace E11
 
         private void button1_Click(object sender, EventArgs e)
         {
-            t = new Thread(numerospares);
+            t = new Thread(numerosimpares);
             t.Start();
         }
 
-        public void numerospares()
+        public void numerosimpares()
         {
-            for (int i = 2; i <= 25; i=i+2)
+            for (int i = 1; i < 25; i=i+2)
             {
                 this.listBox1.Items.Add(i);
                 Thread.Sleep(100);
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
