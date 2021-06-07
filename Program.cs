@@ -1,53 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
+using System.Windows.Forms;
 
-namespace E6
+namespace E9
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Punto de entrada principal para la aplicación.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            Proceso oProceso = new Proceso();
-
-            Console.WriteLine("Contando los numeros primos menores a 20: ");
-            Console.WriteLine("---------------------------------------");
-            Console.WriteLine();
-
-            Thread HiloPrimo = new Thread(oProceso.ContarPrimos);
-            HiloPrimo.IsBackground = true;
-            HiloPrimo.Start();
-            HiloPrimo.Join();
-
-            Console.ReadLine();
-        }
-    }
-    class Proceso
-    {
-        public void ContarPrimos()
-        {
-            int c = 0;
-            for (int numero = 1; numero <= 20; numero++)
-            {
-                for (int i = 1; i <= 20; i++)
-                {
-                    if (numero % i == 0)
-                    {
-                        c = c + 1;
-                    }
-                }
-                if (c==2)
-                {
-                    Console.Write(numero);
-                    Console.WriteLine();
-                }
-                c = 0;
-            }
-
-            Console.WriteLine();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
