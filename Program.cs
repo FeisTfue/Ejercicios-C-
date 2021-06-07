@@ -5,32 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace E2
+namespace E3
 {
     class Program
     {
         static void Main(string[] args)
         {
             Proceso oProceso = new Proceso();
-
-            Console.WriteLine("Contando PARES desde un hilo: ");
+            
+            Console.WriteLine("Contando IMPARES desde un hilo: ");
             Console.WriteLine("----------------------------------------");
             Console.WriteLine();
 
-            Thread HiloPar = new Thread(oProceso.ContarNumerosPares);
-            HiloPar.IsBackground = true;
-            HiloPar.Start();
-            HiloPar.Join();
+            Thread HiloImpar = new Thread(oProceso.ContarNumerosImpares);
+            HiloImpar.IsBackground = true;
+            HiloImpar.Start();
+            HiloImpar.Join();
 
             Console.ReadLine();
         }
     }
-
     class Proceso
     {
-        public void ContarNumerosPares()
+        public void ContarNumerosImpares()
         {
-            for (int numero = 0; numero <= 100; numero = numero + 2)
+            for (int numero = 1; numero <= 100; numero = numero + 2)
             {
                 Console.Write(numero + " ");
                 for (int GranContador = 0; GranContador <= 20000000; GranContador++) ;
