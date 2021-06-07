@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace E4
+namespace E5
 {
     class Program
     {
@@ -13,42 +13,33 @@ namespace E4
         {
             Proceso oProceso = new Proceso();
 
-            Console.WriteLine("Lanzando los dos hilos al mismo tiempo: ");
-            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Sumando los numeros del 1 al 10");
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine();
 
-            Thread nuevoHiloPar = new Thread(oProceso.ContarNumerosPares);
-            Thread nuevoHiloImpar = new Thread(oProceso.ContarNumerosImpares);
-
-            nuevoHiloPar.Start();
-            nuevoHiloImpar.Start();
+            Thread Suma = new Thread(oProceso.SumaNumeros);
+            Suma.IsBackground = true;
+            Suma.Start();
+            Suma.Join();
 
             Console.ReadLine();
         }
     }
     class Proceso
     {
-        public void ContarNumerosPares()
+        public void SumaNumeros()
         {
-            for (int numero = 0; numero <= 100; numero = numero + 2)
+            int sumaw = 0;
+            for (int numero = 1; numero <= 10; numero++)
             {
-                Console.Write(numero + " ");
-                for (int GranContador = 0; GranContador <= 20000000; GranContador++) ;
+                Console.Write(numero + " + ");
+                sumaw = sumaw + numero;
+                for (int GranContador = 0; GranContador <= 20000000; GranContador++);
             }
-
+            
             Console.WriteLine();
-            Console.WriteLine();
-        }
+            Console.WriteLine("La suma es: "+sumaw);
 
-        public void ContarNumerosImpares()
-        {
-            for (int numero = 1; numero <= 100; numero = numero + 2)
-            {
-                Console.Write(numero + " ");
-                for (int GranContador = 0; GranContador <= 20000000; GranContador++) ;
-            }
-
-            Console.WriteLine();
             Console.WriteLine();
         }
     }
