@@ -1,5 +1,5 @@
 ﻿
-namespace E12
+namespace E13
 {
     partial class Form1
     {
@@ -37,15 +37,15 @@ namespace E12
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 31);
+            this.label1.Location = new System.Drawing.Point(305, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 13);
+            this.label1.Size = new System.Drawing.Size(189, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "NUMEROS IMPARES MENORES A 25";
+            this.label1.Text = "NUMEROS PRIMOS MENORES A 30";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(375, 65);
+            this.button1.Location = new System.Drawing.Point(360, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -56,9 +56,9 @@ namespace E12
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(310, 110);
+            this.listBox1.Location = new System.Drawing.Point(308, 121);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(192, 238);
+            this.listBox1.Size = new System.Drawing.Size(186, 251);
             this.listBox1.TabIndex = 2;
             // 
             // Form1
