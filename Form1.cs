@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace E9
+namespace E10
 {
     public partial class Form1 : Form
     {
@@ -18,43 +18,21 @@ namespace E9
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
-            //Hace que los hilos puedan acceder a los controles del hilo principal
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            t = new Thread(hilo1);
-            t.Start();
-
-            t = new Thread(hilo2);
+            t = new Thread(suma);
             t.Start();
         }
 
-        public void hilo1()
+        public void suma()
         {
-            for (int i = 0; i < 20; i++)
+            int s = 0;
+            for (int i = 1; i <= 10; i++)
             {
-                this.listBox1.Items.Add(i);
-                Thread.Sleep(200);
-            }
-        }
-
-        public void hilo2()
-        {
-            for (int i = 0; i < 20; i++)
-            {
-                this.listBox2.Items.Add(i);
-                Thread.Sleep(50);
+                s = s + i;
+                this.listBox1.Items.Add(s);
             }
         }
     }
